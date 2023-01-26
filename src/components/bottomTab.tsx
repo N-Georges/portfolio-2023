@@ -56,7 +56,7 @@ const BottomTab = () => {
   };
 
   return (
-    <div className="btm-nav md:hidden">
+    <div className="btm-nav md:hidden pt-100">
       {dataTabs.map((item) => (
         <NavLink
           key={item.id}
