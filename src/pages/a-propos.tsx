@@ -646,8 +646,8 @@ export default function About() {
                   Why Choose me <span className="text-xl">🤔</span>
                 </p>
                 <h2 className="text-dark mb-8 text-3xl font-bold sm:text-3xl">
-                  Good UI, Customer HAPPY 😊 <br /> Voila le centre de mes
-                  préoccupations.
+                  Good UI, Customer HAPPY <span>😊</span> <br /> Telle est ma
+                  préoccupation.
                 </h2>
                 <p className="text-body-color mb-8 text-base">
                   Je suis développeur junior dont le but est de vous permettre

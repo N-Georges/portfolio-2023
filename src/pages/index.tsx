@@ -1,11 +1,14 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
-
+import { emojiCursor } from "cursor-effects";
 import Hero from "@/components/Hero";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  if (typeof document !== "undefined") {
+    new emojiCursor({ emoji: ["😀", "😂", "😆", "😊"] });
+  }
   return (
     <>
       <Head>

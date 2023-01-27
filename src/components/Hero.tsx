@@ -52,9 +52,9 @@ const Hero = () => {
                   href="https://github.com/N-Georges"
                   target="blank"
                   rel="noopener noreferrer"
-                  className="font-semibold cursor-pointer text-indigo-600"
+                  className="font-semibold cursor-pointer text-primary"
                 >
-                  <span className="absolute inset-0" aria-hidden="true" />
+                  <span className="absolute inset-0 " aria-hidden="true" />
                   Github <span aria-hidden="true">&rarr;</span>
                 </Link>
               </div>
@@ -70,7 +70,7 @@ const Hero = () => {
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                 <span className="">
                   {" "}
-                  Hello <span>👋</span> je suis Georges{" "}
+                  Hello <span className="wave">👋</span> je suis Georges{" "}
                 </span>{" "}
                 <br />
                 <span className="animate-text cursor-pointer bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent font-black">
