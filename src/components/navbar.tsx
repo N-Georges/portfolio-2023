@@ -98,16 +98,16 @@ const Navbar = () => {
                 href={item.href}
                 className="group text-black transition-all duration-300 ease-in-out">
                 <span
-                  className={`bg-left-bottom ${
-                    currentRoute === item.href &&
-                    'bg-gradient-to-r  bg-left-bottom duration-500  bg-[length:100%_8px] bg-no-repeat transition-[background-size] from-green-400 to-green-100 dark:from-indigo-400 dark:to-purple-400'
-                  } bg-gradient-to-r from-green-200 to-green-100 dark:from-indigo-400 dark:to-purple-400
+                  className={`bg-gradient-to-r from-green-200 to-green-100 dark:from-indigo-400 dark:to-purple-400
                   bg-[length:0px_8px]
                   bg-left-bottom
                   bg-no-repeat
                   transition-[background-size]
                   duration-500
-                  hover:bg-[length:100%_3px] group-hover:bg-[length:100%_8px]`}>
+                  hover:bg-[length:100%_3px] group-hover:bg-[length:100%_8px] ${
+                    currentRoute === item.href &&
+                    'bg-gradient-to-r  bg-left-bottom duration-500  bg-[length:100%_8px] bg-no-repeat transition-[background-size] from-green-400 to-green-100 dark:from-indigo-400 dark:to-purple-400'
+                  }`}>
                   {item.name}
                 </span>
               </a>

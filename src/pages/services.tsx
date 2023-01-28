@@ -55,8 +55,8 @@ export default function Services() {
               animate={{opacity: 1, scale: 1}}
               transition={{duration: 1.2}}>
               <div className="p-10 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg mb-8">
-                <div className="w-[70px] h-[70px] flex items-center justify-center bg-primary rounded-2xl mb-5">
-                  <BiBrush className="text-white text-4xl" />
+                <div className="w-[50px] h-[50px] flex items-center justify-center bg-primary rounded-xl mb-5">
+                  <BiBrush className="text-white text-2xl" />
                 </div>
                 <h4 className="font-semibold text-xl text-dark mb-2">Frontend</h4>
                 <p className="text-body-color mb-3">
@@ -90,8 +90,8 @@ export default function Services() {
               animate={{opacity: 1, scale: 1}}
               transition={{duration: 0.8}}>
               <div className="p-10 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg mb-8">
-                <div className="w-[70px] h-[70px] flex items-center justify-center bg-primary rounded-2xl mb-5">
-                  <BiServer className="text-white text-4xl" />
+                <div className="w-[50px] h-[50px] flex items-center justify-center bg-primary rounded-xl mb-5">
+                  <BiServer className="text-white text-2xl" />
                 </div>
                 <h4 className="font-semibold text-xl text-dark mb-3">Backend</h4>
                 <p className="text-body-color mb-3">
@@ -129,8 +129,8 @@ export default function Services() {
               animate={{opacity: 1, scale: 1}}
               transition={{duration: 1.2}}>
               <div className="p-10 md:px-7 xl:px-10 rounded-[20px] bg-white shadow-md hover:shadow-lg mb-8">
-                <div className="w-[70px] h-[70px] flex items-center justify-center bg-primary rounded-2xl mb-5">
-                  <FaMobileAlt className="text-white text-4xl" />
+                <div className="w-[50px] h-[50px] flex items-center justify-center bg-primary rounded-xl mb-5">
+                  <FaMobileAlt className="text-white text-2xl" />
                 </div>
                 <h4 className="font-semibold text-xl text-dark mb-3">Mobile</h4>
                 <p className="text-body-color mb-3">

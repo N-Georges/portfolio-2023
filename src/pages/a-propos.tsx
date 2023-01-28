@@ -1,48 +1,41 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/no-html-link-for-pages */
-import { motion } from "framer-motion";
-import { useState } from "react";
+import {motion} from 'framer-motion'
+import {useState} from 'react'
 
 export default function About() {
-  const [emoji, setEmoji] = useState("👉");
+  const [emoji, setEmoji] = useState('👉')
 
   function handleEmoji() {
-    setEmoji("👍");
+    setEmoji('👍')
   }
 
   return (
     <section
       id="about"
-      className="overflow-hidden pt-20 px-5 lg:px-52 pb-12 lg:pt-[120px] lg:pb-[0px]"
-    >
+      className="overflow-hidden pt-20 px-5 lg:px-52 pb-12 lg:pt-[120px] lg:pb-[0px]">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap items-center justify-between">
           <div className="w-full px-4 lg:w-6/12">
             <div className="-mx-3 flex items-center sm:-mx-4">
               <div className="w-full px-3 sm:px-4 xl:w-1/2">
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
+                  initial={{opacity: 0, scale: 0.5}}
+                  animate={{opacity: 1, scale: 1}}
+                  transition={{duration: 0.5}}>
                   <div className="py-3 sm:py-4">
-                    <img
-                      src="https://images.unsplash.com/photo-1674673353737-9477adeb7e51?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2664&q=80"
-                      alt=""
-                      className="w-full  rounded-2xl"
-                    />
+                    <img src="/about-1.webp" alt="image abstraite" className="w-full rounded-2xl" />
                   </div>
                 </motion.div>
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1 }}
-                >
+                  initial={{opacity: 0, scale: 0.5}}
+                  animate={{opacity: 1, scale: 1}}
+                  transition={{duration: 1}}>
                   <div className="py-3 sm:py-4">
                     <img
-                      src="https://images.unsplash.com/photo-1674673260808-a2b70ca6566e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzMnx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
-                      alt=""
+                      src="/about-2.webp"
+                      alt="paysage montagne"
                       className="w-full  rounded-2xl"
                     />
                   </div>
@@ -50,24 +43,18 @@ export default function About() {
               </div>
               <div className="w-full px-3 sm:px-4 xl:w-1/2">
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.7 }}
-                >
+                  initial={{opacity: 0, scale: 0.5}}
+                  animate={{opacity: 1, scale: 1}}
+                  transition={{duration: 0.7}}>
                   <div className="relative z-10 my-4">
-                    <img
-                      src="https://images.unsplash.com/photo-1674682820595-228161177072?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
-                      alt=""
-                      className="w-full h-full rounded-2xl"
-                    />
+                    <img src="/about-3.webp" alt="clavier" className="w-full h-full rounded-2xl" />
                     <span className="absolute -right-7 -bottom-7 z-[-1]">
                       <svg
                         width="134"
                         height="106"
                         viewBox="0 0 134 106"
                         fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
+                        xmlns="http://www.w3.org/2000/svg">
                         <circle
                           cx="1.66667"
                           cy="104"
@@ -638,49 +625,42 @@ export default function About() {
           <div className="w-full px-4 lg:pl-10 lg:w-1/2 xl:w-5/12">
             <div className="mt-10 lg:mt-0">
               <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.3 }}
-              >
+                initial={{opacity: 0, scale: 0.5}}
+                animate={{opacity: 1, scale: 1}}
+                transition={{duration: 1.3}}>
                 <p className="text-primary mb-2 block text-lg font-semibold">
                   Why Choose me <span className="text-xl">🤔</span>
                 </p>
                 <h2 className="text-dark mb-8 text-3xl font-bold sm:text-3xl">
-                  Good UI, Customer HAPPY <span>😊</span> <br /> Telle est ma
-                  préoccupation.
+                  Good UI, Customer HAPPY <span>😊</span> <br /> Telle est ma préoccupation.
                 </h2>
                 <p className="text-body-color mb-8 text-base">
-                  Je suis développeur junior dont le but est de vous permettre
-                  de réaliser vos projets web. je travaille principalement avec
-                  le framework Nextjs. J'ai un fort intérêt pour le
-                  développement mobile avec React Native.
+                  Je suis développeur junior dont le but est de vous permettre de réaliser vos
+                  projets web. je travaille principalement avec le framework Nextjs. J'ai un fort
+                  intérêt pour le développement mobile avec React Native.
                 </p>
                 <p className="text-body-color mb-12 text-base">
-                  J'ai un bon contact client et j'essaie toujours de m'assurer
-                  de bien comprendre leurs besoins. Je suis disponible à
-                  m'adapter à tout type de projet quelle que soit sa
-                  technologie.
+                  J'ai un bon contact client et j'essaie toujours de m'assurer de bien comprendre
+                  leurs besoins. Je suis disponible à m'adapter à tout type de projet quelle que
+                  soit sa technologie.
                 </p>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.4 }}
-              >
+                initial={{opacity: 0, scale: 0.5}}
+                animate={{opacity: 1, scale: 1}}
+                transition={{duration: 1.4}}>
                 <div className="mt-10 flex items-center justify-start gap-x-6">
-                  {" "}
+                  {' '}
                   <a
                     onClick={handleEmoji}
                     href="/services"
-                    className="px-5 py-2.5 relative rounded group font-medium text-white inline-block"
-                  >
+                    className="px-5 py-2.5 relative rounded group font-medium text-white inline-block">
                     <span className="absolute top-0 left-0 w-full h-full rounded opacity-50 filter blur-sm bg-gradient-to-br from-purple-600 to-blue-500"></span>
                     <span className="h-full w-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br filter group-active:opacity-0 rounded opacity-50 from-purple-600 to-blue-500"></span>
                     <span className="absolute inset-0 w-full h-full transition-all duration-200 ease-out rounded shadow-xl bg-gradient-to-br filter group-active:opacity-0 group-hover:blur-sm from-purple-600 to-blue-500"></span>
                     <span className="absolute inset-0 w-full h-full transition duration-200 ease-out rounded bg-gradient-to-br to-purple-600 from-blue-500"></span>
                     <span className="relative flex justify-center items-center gap-2">
-                      Découvrir mes services{" "}
-                      <span className="text-2xl">{emoji}</span>
+                      Découvrir mes services <span className="text-2xl">{emoji}</span>
                     </span>
                   </a>
                 </div>
@@ -690,5 +670,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  );
+  )
 }
