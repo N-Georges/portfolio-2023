@@ -8,7 +8,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon_2.ico" />
         <meta name="title" property="og:title" content="Nodari Georges - Portfolio" />
-        <meta name="image" property="og:image" content="/og.webp" />
+        <meta
+          name="image"
+          property="og:image"
+          content="https://portfolio-2023-red.vercel.app/_next/image?url=%2Fog.webp&w=1080&q=75"
+        />
         <meta
           name="description"
           property="og:description"
