@@ -1,17 +1,20 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 const Hero = () => {
   const [emoji, setEmoji] = useState("😁");
+  const router = useRouter();
+
   function handleEmoji() {
     setEmoji("🤗");
+    router.push("/projets");
   }
 
   return (
     <section id="hero">
-      <div className="relative px-6 z-20 lg:px-8">
+      <div className="relative z-20 px-6 lg:px-8">
         <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
           <svg
             className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
@@ -39,14 +42,14 @@ const Hero = () => {
           </svg>
         </div>
 
-        <div className="mx-auto max-w-2xl py-32 mt-20 sm:py-48 lg:py-56">
+        <div className="max-w-2xl py-32 mx-auto mt-20 sm:py-48 lg:py-56">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7 }}
             >
-              <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+              <div className="relative px-3 py-1 text-sm leading-6 text-gray-600 rounded-full ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                 Faites un tour sur mon profile{" "}
                 <Link
                   href="https://github.com/N-Georges"
@@ -73,7 +76,7 @@ const Hero = () => {
                   Hello <span className="wave">👋</span> je suis Georges{" "}
                 </span>{" "}
                 <br />
-                <span className="animate-text cursor-pointer bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent font-black">
+                <span className="font-black text-transparent cursor-pointer animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text">
                   Développeur
                 </span>{" "}
                 Web <span>🧑‍💻</span>
@@ -85,8 +88,8 @@ const Hero = () => {
               transition={{ duration: 0.9 }}
             >
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Plus qu&apos;un métier, une passion, j&apos;aime commencer par
-                une simple idée et en faire un produit fini.
+                Plus qu&apos;un métier, une passion, j&apos;aime commencer par une simple idée et en
+                faire un produit fini.
               </p>
             </motion.div>
             <motion.div
@@ -94,22 +97,20 @@ const Hero = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.3 }}
             >
-              <div className="mt-10 flex items-center justify-center gap-x-6">
+              <div className="flex items-center justify-center mt-10 gap-x-6">
                 {" "}
-                <a
+                <button
                   onClick={handleEmoji}
-                  href="/projets"
                   className="px-5 py-2.5 relative rounded group font-medium text-white inline-block"
                 >
                   <span className="absolute top-0 left-0 w-full h-full rounded opacity-50 filter blur-sm bg-gradient-to-br from-purple-600 to-blue-500"></span>
                   <span className="h-full w-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br filter group-active:opacity-0 rounded opacity-50 from-purple-600 to-blue-500"></span>
                   <span className="absolute inset-0 w-full h-full transition-all duration-200 ease-out rounded shadow-xl bg-gradient-to-br filter group-active:opacity-0 group-hover:blur-sm from-purple-600 to-blue-500"></span>
                   <span className="absolute inset-0 w-full h-full transition duration-200 ease-out rounded bg-gradient-to-br to-purple-600 from-blue-500"></span>
-                  <span className="relative flex justify-center items-center gap-2">
-                    Découvrir mes projets{" "}
-                    <span className="text-2xl">{emoji}</span>
+                  <span className="relative flex items-center justify-center gap-2">
+                    Découvrir mes projets <span className="text-2xl">{emoji}</span>
                   </span>
-                </a>
+                </button>
               </div>
             </motion.div>
           </div>

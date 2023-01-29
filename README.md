@@ -37,35 +37,17 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-Bienvenue sur mon portfolio
-===========================
+# Bienvenue sur mon portfolio
 
-Je m'appelle Your Name et je suis développeur web/mobile. Ce portfolio présente mes projets les plus récents ainsi que mes compétences et expériences professionnelles.
+Je m'appelle Nodari Georges et je suis développeur web/mobile junior. Ce portfolio présente mes projets les plus récents ainsi que mes compétences.
 
-Projets
--------
+## Compétences
 
--   Project Name 1 - Description courte de votre projet. Technologies utilisées: ex: React, Node.js, MongoDB. [Voir le projet](https://chat.openai.com/chat/link-to-project)
--   Project Name 2 - Description courte de votre projet. Technologies utilisées: ex: Vue.js, Firebase, GraphQL. [Voir le projet](https://chat.openai.com/chat/link-to-project)
--   Project Name 3 - Description courte de votre projet. Technologies utilisées: ex: Angular, Express, MySQL. [Voir le projet](https://chat.openai.com/chat/link-to-project)
+- Langages: JavaScript, HTML, CSS, TypeScript
+- Frameworks & Bibliothèques: React, Next.js, TailwindCSS, Express, Node.js
+- Base de données: MongoDB, MySQL, Supabase, Hasura, Postgresql
+- Autres compétences: Git, GitHub,, Gitlab, Agile, Scrum, Responsive Design
 
-Compétences
------------
+## Contact
 
--   Langages: JavaScript, HTML, CSS, TypeScript, Java, C#
--   Frameworks & Bibliothèques: React, Vue.js, Angular, Express, Node.js
--   Base de données: MongoDB, MySQL, Firebase
--   Autres compétences: Git, GitHub, Agile, Scrum, Responsive Design
-
-Expérience professionnelle
---------------------------
-
--   Nom de l'entreprise - Poste occupé - Dates d'embauche et de fin (si applicable)
--   Nom de l'entreprise - Poste occupé - Dates d'embauche et de fin (si applicable)
--   Nom de l'entreprise - Poste occupé - Dates d'embauche et de fin (si applicable)
-
-Contact
--------
-
-Si vous avez des questions ou souhaitez travailler avec moi, n'hésitez pas à me contacter par e-mail à your email ou via les réseaux sociaux sur your linkedin, twitter, github or other social media account.
-
+Si vous avez des questions ou souhaitez travailler avec moi, n'hésitez pas à me contacter par e-mail ou via les réseaux sociaux sur linkedin.

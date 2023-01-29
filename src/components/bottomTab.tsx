@@ -1,69 +1,61 @@
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { FcHome, FcAbout, FcAcceptDatabase, FcFolder } from "react-icons/fc";
 
+const dataTabs = [
+  {
+    id: 1,
+    tabTitle: "Acceuil",
+    tabIcon: <FcHome className="w-5 h-5" />,
+    href: "/",
+  },
+  {
+    id: 2,
+    tabTitle: "A propos",
+    tabIcon: <FcAbout className="w-5 h-5" />,
+    href: "/a-propos",
+  },
+  {
+    id: 3,
+    tabTitle: "Services",
+    tabIcon: <FcAcceptDatabase className="w-5 h-5" />,
+    href: "/services",
+  },
+  {
+    id: 4,
+    tabTitle: "Projets",
+    tabIcon: <FcFolder className="w-5 h-5" />,
+    href: "/projets",
+  },
+];
+
 const BottomTab = () => {
-  const [isActive, setIsActive] = useState(1);
+  const [isActive, setIsActive] = useState(0);
+  const router = useRouter();
 
-  const [dataTabs] = useState([
-    {
-      id: 1,
-      tabTitle: "Acceuil",
-      tabIcon: <FcHome className="h-5 w-5" />,
-    },
-    {
-      id: 2,
-      tabTitle: "A propos",
-      tabIcon: <FcAbout className="h-5 w-5" />,
-    },
-    {
-      id: 3,
-      tabTitle: "Services",
-      tabIcon: <FcAcceptDatabase className="h-5 w-5" />,
-    },
-    {
-      id: 4,
-      tabTitle: "Projets",
-      tabIcon: <FcFolder className="h-5 w-5" />,
-    },
-  ]);
-
-  const NavLink = ({
-    id,
-    tabTitle,
-    tabIcon,
-    isActive,
-    onClick,
-  }: {
-    id: number;
-    tabTitle: string;
-    tabIcon: JSX.Element;
-    isActive: boolean;
-    onClick: () => void;
-  }) => {
-    return (
-      <button
-        onClick={() => navigate(id)}
-        className={`${isActive ? "active" : ""}`}
-      >
-        {tabIcon}
-        <span className="text-xs">{tabTitle}</span>
-      </button>
-    );
-  };
-
-  const navigate = (id: number) => {
-    setIsActive(id);
+  const navigate = (index: number) => {
+    setIsActive(index);
+    router.push(dataTabs[index].href);
   };
 
   return (
     <div className="btm-nav md:hidden pt-100">
-      {dataTabs.map((item) => (
-        <NavLink
+      {dataTabs.map((item, index) => (
+        <button
           key={item.id}
-          {...item}
-          isActive={isActive === item.id}
-          onClick={() => navigate(item.id)}
-        />
+          onClick={() => navigate(index)}
+          className={`${isActive === index ? "active" : ""}`}
+        >
+          {item.tabIcon}
+          <span
+            className={`text-xs ${
+              isActive === index &&
+              "bg-primary rounded-xl transition-all delay-150 ease-in-out text-white px-2 py-1 "
+            } `}
+          >
+            {item.tabTitle}
+          </span>
+        </button>
       ))}
     </div>
   );
