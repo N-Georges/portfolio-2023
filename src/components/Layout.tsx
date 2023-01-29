@@ -7,6 +7,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon_2.ico" />
+        <meta property="og:image" content="/og.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="portfolio-2023-red.vercel.app" />
+        <meta property="twitter:url" content="https://portfolio-2023-red.vercel.app/" />
+        <meta name="twitter:title" content="NG - Portfolio" />
+        <meta
+          name="twitter:description"
+          content="Portfolio de Nodari Georges, développeur junior"
+        />
+        <meta name="twitter:image" content="/og.webp" />
       </Head>
       <Navbar />
       <main>
