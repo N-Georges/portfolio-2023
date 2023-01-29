@@ -7,10 +7,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon_2.ico" />
-        <meta property="og:title" content="Portfolio de Nodari Georges, développeur junior" />
-        <meta property="og:image" content="/og.webp" />
-        <meta property="og:description" content="Portfolio de Nodari Georges, développeur junior" />
-        <meta property="og:url" content="https://portfolio-2023-red.vercel.app/" />
+        <meta
+          name="title"
+          property="og:title"
+          content="Portfolio de Nodari Georges, développeur junior"
+        />
+        <meta name="image" property="og:image" content="/og.webp" />
+        <meta
+          name="description"
+          property="og:description"
+          content="Portfolio de Nodari Georges, développeur junior"
+        />
+        <meta name="url" property="og:url" content="https://portfolio-2023-red.vercel.app/" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="portfolio-2023-red.vercel.app" />
         <meta property="twitter:url" content="https://portfolio-2023-red.vercel.app/" />
