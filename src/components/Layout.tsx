@@ -7,11 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon_2.ico" />
-        <meta
-          name="title"
-          property="og:title"
-          content="Portfolio de Nodari Georges, développeur junior"
-        />
+        <meta name="title" property="og:title" content="Nodari Georges - Portfolio" />
         <meta name="image" property="og:image" content="/og.webp" />
         <meta
           name="description"
