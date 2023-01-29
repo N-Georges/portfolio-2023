@@ -662,17 +662,18 @@ export default function About() {
                     Why Choose me <span className="text-xl">🤔</span>
                   </p>
                   <h2 className="mb-8 text-3xl font-bold text-dark sm:text-3xl">
-                    Good UI, Customer HAPPY <span>😊</span> <br /> Telle est ma préoccupation.
+                    Good UI, Customer HAPPY <span>😊</span>
                   </h2>
                   <p className="mb-8 text-base text-body-color">
-                    Je suis développeur junior dont le but est de vous permettre de réaliser vos
-                    projets web. je travaille principalement avec le framework Nextjs. J&apos;ai un
-                    fort intérêt pour le développement mobile avec React Native.
+                    Je suis développeur web junior, je travaille principalement avec le framework
+                    Next.js. J&apos;ai un fort intérêt pour le développement mobile avec React
+                    Native.
                   </p>
                   <p className="mb-12 text-base text-body-color">
-                    J&apos;ai un bon contact client et j&apos;essaie toujours de m&apos;assurer de
-                    bien comprendre leurs besoins. Je suis disponible à m&apos;adapter à tout type
-                    de projet quelle que soit sa technologie.
+                    J&apos;ai une bonne connaissance des technologies front-end et back-end. Je
+                    pense que j&apos;ai plus d&apos;affinité pour la partie back-end mais je suis
+                    ouvert à toutes propositions. Je recherche toujours à apprendre de nouvelles
+                    choses et à améliorer mes compétences.
                   </p>
                 </motion.div>
                 <motion.div

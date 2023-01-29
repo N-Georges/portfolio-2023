@@ -1,30 +1,30 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { FcHome, FcAbout, FcAcceptDatabase, FcFolder } from "react-icons/fc";
+import { TbHome, TbFileInfo, TbLayout2, TbBolt } from "react-icons/tb";
 
 const dataTabs = [
   {
     id: 1,
     tabTitle: "Acceuil",
-    tabIcon: <FcHome className="w-5 h-5" />,
+    tabIcon: TbHome,
     href: "/",
   },
   {
     id: 2,
     tabTitle: "A propos",
-    tabIcon: <FcAbout className="w-5 h-5" />,
+    tabIcon: TbFileInfo,
     href: "/a-propos",
   },
   {
     id: 3,
     tabTitle: "Services",
-    tabIcon: <FcAcceptDatabase className="w-5 h-5" />,
+    tabIcon: TbBolt,
     href: "/services",
   },
   {
     id: 4,
     tabTitle: "Projets",
-    tabIcon: <FcFolder className="w-5 h-5" />,
+    tabIcon: TbLayout2,
     href: "/projets",
   },
 ];
@@ -46,7 +46,7 @@ const BottomTab = () => {
           onClick={() => navigate(index)}
           className={`${isActive === index ? "active" : ""}`}
         >
-          {item.tabIcon}
+          <item.tabIcon className={`w-6 h-6 ${isActive === index ? "text-primary" : ""}`} />
           <span
             className={`text-xs ${
               isActive === index &&

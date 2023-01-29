@@ -24,7 +24,7 @@ export default function Services() {
         <title>NG - Services</title>
         <meta name="description" content="Voici, les services que je propose" />
       </Head>
-      <section className="pt-20 pb-32 lg:pt-[120px] md:pb-12 lg:pb-[90px]">
+      <section className="pt-20 pb-32 lg:pt-[150px] md:pb-12 lg:pb-[90px]">
         <div className="container mx-auto">
           <div className="flex flex-wrap">
             <div className="w-full px-4">
@@ -51,8 +51,8 @@ export default function Services() {
                     <span className="ml-1">🤝</span>
                   </h2>
                   <p className="text-base text-body-color">
-                    Une revue complète des besoins client ainsi je pourrais utiliser les different
-                    outils pour construire un projet de A à Z.
+                    J&apos;aime utiliser les dernières technologies avec lesquels j&apos;ai le plus
+                    d&apos;affinités pour créer des sites web et des applications mobiles.
                   </p>
                 </div>
               </motion.div>
@@ -70,10 +70,6 @@ export default function Services() {
                     <BiBrush className="text-2xl text-white" />
                   </div>
                   <h4 className="mb-2 text-xl font-semibold text-dark">Frontend</h4>
-                  <p className="mb-3 text-body-color">
-                    We dejoy working with discerning clients, people for whom qualuty, service,
-                    integrity & aesthetics.
-                  </p>
                   <div className="space-y-2">
                     <div className="flex items-center space-x-2">
                       <SiNextdotjs className="text-3xl p-1 text-[#000000] rounded-lg" />
@@ -106,10 +102,6 @@ export default function Services() {
                     <BiServer className="text-2xl text-white" />
                   </div>
                   <h4 className="mb-3 text-xl font-semibold text-dark">Backend</h4>
-                  <p className="mb-3 text-body-color">
-                    We dejoy working with discerning clients, people for whom qualuty, service,
-                    integrity & aesthetics.
-                  </p>
                   <div className="space-y-2">
                     <div className="flex items-center space-x-2">
                       <SiPostgresql className="text-3xl p-1 text-[#306289] rounded-lg" />
@@ -146,10 +138,6 @@ export default function Services() {
                     <FaMobileAlt className="text-2xl text-white" />
                   </div>
                   <h4 className="mb-3 text-xl font-semibold text-dark">Mobile</h4>
-                  <p className="mb-3 text-body-color">
-                    We dejoy working with discerning clients, people for whom qualuty, service,
-                    integrity & aesthetics.
-                  </p>
                   <div className="space-y-2">
                     <div className="flex items-center space-x-2">
                       <SiReact className="text-3xl p-1 text-[#62DAFB] rounded-lg" />

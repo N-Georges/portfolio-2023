@@ -87,9 +87,8 @@ const Hero = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.9 }}
             >
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                Plus qu&apos;un métier, une passion, j&apos;aime commencer par une simple idée et en
-                faire un produit fini.
+              <p className="mt-6 text-lg font-semibold leading-8 tracking-wider text-gray-600">
+                Plus qu&apos;un métier, une passion
               </p>
             </motion.div>
             <motion.div

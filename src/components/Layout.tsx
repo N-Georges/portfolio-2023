@@ -16,17 +16,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <meta
           name="description"
           property="og:description"
-          content="Portfolio de Nodari Georges, développeur junior"
+          content="Portfolio de Nodari Georges, développeur web"
         />
         <meta name="url" property="og:url" content="https://portfolio-2023-red.vercel.app/" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="portfolio-2023-red.vercel.app" />
         <meta property="twitter:url" content="https://portfolio-2023-red.vercel.app/" />
         <meta name="twitter:title" content="NG - Portfolio" />
-        <meta
-          name="twitter:description"
-          content="Portfolio de Nodari Georges, développeur junior"
-        />
+        <meta name="twitter:description" content="Portfolio de Nodari Georges, développeur web" />
         <meta name="twitter:image" content="/og.webp" />
       </Head>
       <Navbar />

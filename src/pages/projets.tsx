@@ -2,6 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { TbFileDescription, TbWorldUpload, TbBrandGithub } from "react-icons/tb";
+
 import {
   SiTailwindcss,
   SiChakraui,
@@ -30,7 +32,7 @@ const tabs = [
   },
   {
     id: 3,
-    title: "Clientèle",
+    title: "Clientèles",
   },
 ];
 
@@ -39,9 +41,10 @@ const data_projects = [
     id: 1,
     title: "Mutatis",
     description:
-      "Mutatis est un cabinet juridique basé à brussels spécialisé dans le droit de la propriété intellectuelle, les nouvelles technologies et la protection des données.",
+      "Mutatis est un cabinet juridique spécialisé dans le droit de la propriété intellectuelle, les nouvelles technologies etc...",
     image: "/mutatis.webp",
     link: "https://www.mutatis.legal/",
+    github: "",
     category: "customer",
     technologies: [{ id: 1, icon: SiSquarespace, name: "Squarespace", color: "text-[#000000]" }],
   },
@@ -52,6 +55,7 @@ const data_projects = [
       "Oak law firm est un cabinet d'avocats belge spécialisé dans un grand nombre de domaines juridiques.",
     image: "/oak.webp",
     link: "https://www.oaklaw.eu/",
+    github: "",
     category: "customer",
     technologies: [{ id: 1, icon: SiSquarespace, name: "Squarespace", color: "text-[#000000]" }],
   },
@@ -62,6 +66,7 @@ const data_projects = [
       "Mon portfolio est un site web qui vous permet de découvrir mes projets et mes compétences.",
     image: "/portfolio-1.avif",
     link: "https://www.mutatis.legal/",
+    github: "https://github.com/N-Georges",
     category: "personal",
     technologies: [
       { id: 1, icon: SiNextdotjs, name: "Next.js", color: "text-[#000000]" },
@@ -75,6 +80,7 @@ const data_projects = [
       "Mon portfolio est un site web qui vous permet de découvrir mes projets et mes compétences.",
     image: "/portfolio-2.avif",
     link: "https://www.mutatis.legal/",
+    github: "https://github.com/N-Georges",
     category: "personal",
     technologies: [
       { id: 1, icon: SiNextdotjs, name: "Next.js", color: "text-[#000000]" },
@@ -136,14 +142,13 @@ export default function Projets() {
               sm:text-4xl
               md:text-[40px]
               text-dark
-              mb-4
+              my-4
               "
                   >
-                    Ce que je propose
-                    <span className="ml-1">🤝</span>
+                    😊 + ‍💻 + 🧠 = <span className="text-primary">🚀</span>
                   </h2>
                   <p className="text-base text-body-color">
-                    Une vision d&apos;ensemble de mes projets personnels et clientèle.
+                    Une vision d&apos;ensemble de mes projets personnels et clientèles.
                   </p>
                 </div>
               </motion.div>
@@ -195,14 +200,15 @@ export default function Projets() {
                         height={500}
                       />
                     </div>
-                    <div className="mx-3 mt-2 space-y-2">
-                      <div>
-                        <p className="mb-2 text-xl font-medium">Description</p>
-                        <p className="ml-3 text-base text-body-color">{item.description}</p>
+                    <div className="mx-3 mt-2 space-y-3">
+                      <p className="mb-2 text-xl font-medium">Description</p>
+                      <div className="flex items-center space-x-3">
+                        <TbFileDescription className="text-2xl text-[#000000]" />
+                        <p className="text-base text-body-color">{item.description}</p>
                       </div>
                       <div>
                         <p className="mb-2 text-xl font-medium">Technologies</p>
-                        <div className="ml-3 space-y-2 ">
+                        <div className="space-y-3">
                           {item.technologies.map((item) => (
                             <div key={item.id} className="flex items-center space-x-2">
                               <item.icon className={`text-2xl ${item.color}`} />
@@ -213,9 +219,22 @@ export default function Projets() {
                       </div>
                       <div>
                         <p className="mb-2 text-xl font-medium">Liens utiles</p>
-                        <Link href={item.link} target="_blank" className="ml-3 link link-primary">
-                          {item.link}
-                        </Link>
+                        <div className="space-y-3">
+                          <div className="flex items-center space-x-3">
+                            <TbWorldUpload className="text-2xl text-[#000000]" />
+                            <Link href={item.link} target="_blank" className="link link-hover">
+                              {item.link}
+                            </Link>
+                          </div>
+                          {item.github && (
+                            <div className="flex items-center space-x-3">
+                              <TbBrandGithub className="text-2xl text-[#000000]" />
+                              <Link href={item.github} target="_blank" className="link link-hover">
+                                {item.github}
+                              </Link>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
