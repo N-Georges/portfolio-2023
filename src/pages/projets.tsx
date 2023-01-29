@@ -178,7 +178,7 @@ export default function Projets() {
                 </div>
                 <div className="collapse-content">
                   <div className="mockup-window border bg-base-300">
-                    <div className="h-96 carousel carousel-vertical">
+                    {/* <div className="h-96 carousel carousel-vertical">
                       <div className="carousel-item h-full">
                         <Image
                           src="/mutatis.webp"
@@ -215,14 +215,14 @@ export default function Projets() {
                           height={500}
                         />
                       </div>
-                    </div>
-                    {/* <Image
+                    </div> */}
+                    <Image
                       src={item.image}
                       alt="mutatis legal website"
                       className="w-full h-auto"
                       width={500}
                       height={500}
-                    /> */}
+                    />
                   </div>
                   <div className="mx-3 mt-2 space-y-2">
                     <div>

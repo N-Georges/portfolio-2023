@@ -36,3 +36,36 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+Bienvenue sur mon portfolio
+===========================
+
+Je m'appelle Your Name et je suis développeur web/mobile. Ce portfolio présente mes projets les plus récents ainsi que mes compétences et expériences professionnelles.
+
+Projets
+-------
+
+-   Project Name 1 - Description courte de votre projet. Technologies utilisées: ex: React, Node.js, MongoDB. [Voir le projet](https://chat.openai.com/chat/link-to-project)
+-   Project Name 2 - Description courte de votre projet. Technologies utilisées: ex: Vue.js, Firebase, GraphQL. [Voir le projet](https://chat.openai.com/chat/link-to-project)
+-   Project Name 3 - Description courte de votre projet. Technologies utilisées: ex: Angular, Express, MySQL. [Voir le projet](https://chat.openai.com/chat/link-to-project)
+
+Compétences
+-----------
+
+-   Langages: JavaScript, HTML, CSS, TypeScript, Java, C#
+-   Frameworks & Bibliothèques: React, Vue.js, Angular, Express, Node.js
+-   Base de données: MongoDB, MySQL, Firebase
+-   Autres compétences: Git, GitHub, Agile, Scrum, Responsive Design
+
+Expérience professionnelle
+--------------------------
+
+-   Nom de l'entreprise - Poste occupé - Dates d'embauche et de fin (si applicable)
+-   Nom de l'entreprise - Poste occupé - Dates d'embauche et de fin (si applicable)
+-   Nom de l'entreprise - Poste occupé - Dates d'embauche et de fin (si applicable)
+
+Contact
+-------
+
+Si vous avez des questions ou souhaitez travailler avec moi, n'hésitez pas à me contacter par e-mail à your email ou via les réseaux sociaux sur your linkedin, twitter, github or other social media account.
+

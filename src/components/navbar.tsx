@@ -1,23 +1,23 @@
-import {useState} from 'react'
-import {FiMoreHorizontal} from 'react-icons/fi'
-import Link from 'next/link'
-import {FcAbout, FcAcceptDatabase, FcFolder, FcHome} from 'react-icons/fc'
-import {IconGmail} from './Gmail'
-import {IconLinkedin} from './linkedin'
-import {IconGithub} from './Github'
-import {useRouter} from 'next/router'
+import {useState} from "react"
+import {FiMoreHorizontal} from "react-icons/fi"
+import Link from "next/link"
+import {FcAbout, FcAcceptDatabase, FcFolder, FcHome} from "react-icons/fc"
+import {IconGmail} from "./Gmail"
+import {IconLinkedin} from "./linkedin"
+import {IconGithub} from "./Github"
+import {useRouter} from "next/router"
 
 const navigation = [
-  {name: 'Acceuil', href: '/', icon: FcHome},
-  {name: 'A propos', href: '/a-propos', icon: FcAbout},
-  {name: 'Services', href: '/services', icon: FcAcceptDatabase},
-  {name: 'Projets', href: '/projets', icon: FcFolder},
+  {name: "Acceuil", href: "/", icon: FcHome},
+  {name: "A propos", href: "/a-propos", icon: FcAbout},
+  {name: "Services", href: "/services", icon: FcAcceptDatabase},
+  {name: "Projets", href: "/projets", icon: FcFolder},
 ]
 
 const social = [
   {
-    name: 'gmail',
-    href: 'mailto:ngeorges.dev@gmail.com',
+    name: "gmail",
+    href: "mailto:ngeorges.dev@gmail.com",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -40,8 +40,8 @@ const social = [
     ),
   },
   {
-    name: 'A propos',
-    href: 'https://www.linkedin.com/in/georges-nodari/',
+    name: "A propos",
+    href: "https://www.linkedin.com/in/georges-nodari/",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -59,8 +59,8 @@ const social = [
     ),
   },
   {
-    name: 'Services',
-    href: 'https://github.com/N-Georges',
+    name: "Services",
+    href: "https://github.com/N-Georges",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -86,9 +86,11 @@ const Navbar = () => {
       {/* web navbar */}
       <div className="navbar-center gap-5">
         <h1 className="text-3xl hidden md:flex cursor-pointer">
-          <span className="animate-text cursor-pointer bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent font-black border-gray-500 h-10 w-10 text-center flex justify-center items-center ml-2 rounded-md">
+          <Link
+            href="/"
+            className="animate-text cursor-pointer bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent font-black border-gray-500 h-10 w-10 text-center flex justify-center items-center ml-2 rounded-md">
             ⚡
-          </span>
+          </Link>
         </h1>
         <nav className="flex items-center flex-1 justify-center text-center" aria-label="Global">
           <div className="hidden md:flex md:gap-x-12">
@@ -106,7 +108,7 @@ const Navbar = () => {
                   duration-500
                   hover:bg-[length:100%_3px] group-hover:bg-[length:100%_8px] ${
                     currentRoute === item.href &&
-                    'bg-gradient-to-r  bg-left-bottom duration-500  bg-[length:100%_8px] bg-no-repeat transition-[background-size] from-green-400 to-green-100 dark:from-indigo-400 dark:to-purple-400'
+                    "bg-gradient-to-r  bg-left-bottom duration-500  bg-[length:100%_8px] bg-no-repeat transition-[background-size] from-green-400 to-green-100 dark:from-indigo-400 dark:to-purple-400"
                   }`}>
                   {item.name}
                 </span>
@@ -137,13 +139,13 @@ const Navbar = () => {
           <ul
             tabIndex={0}
             className={`menu ${
-              isOpen ? 'hidden' : ''
+              isOpen ? "hidden" : ""
             } menu-compact dropdown-content mt-4 p-2 shadow bg-base-100 rounded-box w-52`}>
             {navigation.map((item) => (
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className={` ${currentRoute === item.href && 'bg-blue-400 text-white'}`}>
+                  className={` ${currentRoute === item.href && "bg-blue-400 text-white"}`}>
                   <item.icon className="h-6 w-6" />
                   <span>{item.name}</span>
                 </Link>
@@ -161,7 +163,7 @@ const Navbar = () => {
           <ul
             tabIndex={0}
             className={`menu ${
-              isOpen ? 'hidden' : ''
+              isOpen ? "hidden" : ""
             } dropdown-content p-2 shadow bg-base-100 rounded-box mt-4`}>
             {social.map((item) => (
               <li key={item.name}>
