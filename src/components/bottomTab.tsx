@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import { TbHome, TbFileInfo, TbLayout2, TbBolt } from "react-icons/tb";
 
 const dataTabs = [
