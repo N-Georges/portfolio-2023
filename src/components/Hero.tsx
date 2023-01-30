@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 
 const Hero = () => {
   const [emoji, setEmoji] = useState("😁");
+
   const router = useRouter();
 
   function handleEmoji() {
