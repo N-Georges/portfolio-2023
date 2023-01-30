@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Navbar from "./Navbar";
+import Header from "./Header";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -26,7 +26,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <meta name="twitter:description" content="Portfolio de Nodari Georges, développeur web" />
         <meta name="twitter:image" content="/og.webp" />
       </Head>
-      <Navbar />
+      <Header />
       <main>
         <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
           <svg

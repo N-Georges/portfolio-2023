@@ -30,7 +30,7 @@ const social = [
   },
 ];
 
-const Navbar = () => {
+const Header = () => {
   const [isOpen, setOpen] = useState(false);
   const router = useRouter();
   const currentRoute = router.pathname;
@@ -123,4 +123,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;
