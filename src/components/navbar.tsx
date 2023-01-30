@@ -34,10 +34,11 @@ const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const router = useRouter();
   const currentRoute = router.pathname;
+
   const toggle = () => setOpen(!isOpen);
+
   return (
     <div className="fixed inset-x-0 top-0 z-50 flex flex-row justify-between bg-transparent navbar">
-      {/* web navbar */}
       <div className="gap-5 navbar-center">
         <h1 className="text-3xl cursor-pointer md:flex">
           <Link
@@ -78,7 +79,6 @@ const Navbar = () => {
       <BottomTab />
 
       <div className="navbar-end">
-        {/* mobile social media */}
         <div onClick={toggle} className="dropdown dropdown-end md:hidden">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <TbDotsVertical className="w-6 h-6 " />
@@ -104,7 +104,6 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* web social media */}
         <div className="hidden space-x-7 md:inline-flex">
           {social.map((item) => (
             <Link
