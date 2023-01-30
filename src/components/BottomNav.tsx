@@ -29,7 +29,7 @@ const dataTabs = [
   },
 ];
 
-const BottomTab = () => {
+const BottomNav = () => {
   const router = useRouter();
   const currentRoute = router.pathname;
 
@@ -55,4 +55,4 @@ const BottomTab = () => {
   );
 };
 
-export default BottomTab;
+export default BottomNav;

@@ -2,8 +2,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import BottomTab from "./BottomTab";
 import { TbBrandGithub, TbBrandGmail, TbBrandLinkedin, TbDotsVertical } from "react-icons/tb";
+import BottomNav from "./BottomNav";
 
 const navigation = [
   { name: "Acceuil", href: "/" },
@@ -75,9 +75,7 @@ const Header = () => {
           </div>
         </nav>
       </div>
-
-      <BottomTab />
-
+      <BottomNav />
       <div className="navbar-end">
         <div onClick={toggle} className="dropdown dropdown-end md:hidden">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
