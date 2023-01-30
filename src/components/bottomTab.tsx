@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { TbHome, TbFileInfo, TbLayout2, TbBolt } from "react-icons/tb";
@@ -30,32 +31,26 @@ const dataTabs = [
 ];
 
 const BottomTab = () => {
-  const [isActive, setIsActive] = useState(0);
   const router = useRouter();
-
-  const navigate = (index: number) => {
-    setIsActive(index);
-    router.push(dataTabs[index].href);
-  };
+  const currentRoute = router.pathname;
 
   return (
     <div className="btm-nav md:hidden pt-100">
       {dataTabs.map((item, index) => (
-        <button
+        <Link
+          href={item.href}
           key={item.id}
-          onClick={() => navigate(index)}
-          className={`${isActive === index ? "active" : ""}`}
+          className={`${currentRoute === item.href ? "active" : ""}`}
         >
-          <item.tabIcon className={`w-6 h-6 ${isActive === index ? "text-primary" : ""}`} />
+          <item.tabIcon className={`w-6 h-6 ${currentRoute === item.href ? "text-primary" : ""}`} />
           <span
             className={`text-xs ${
-              isActive === index &&
-              "bg-primary rounded-xl transition-all delay-150 ease-in-out text-white px-2 py-1 "
+              currentRoute === item.href && "bg-primary rounded-full text-white px-2 py-1 "
             } `}
           >
             {item.tabTitle}
           </span>
-        </button>
+        </Link>
       ))}
     </div>
   );

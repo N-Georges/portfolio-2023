@@ -2,7 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import BottomTab from "./bottomTab";
+import BottomTab from "./BottomTab";
 import { TbBrandGithub, TbBrandGmail, TbBrandLinkedin, TbDotsVertical } from "react-icons/tb";
 
 const navigation = [
@@ -31,9 +31,9 @@ const social = [
 ];
 
 const Navbar = () => {
+  const [isOpen, setOpen] = useState(false);
   const router = useRouter();
   const currentRoute = router.pathname;
-  const [isOpen, setOpen] = useState(false);
   const toggle = () => setOpen(!isOpen);
   return (
     <div className="fixed inset-x-0 top-0 z-50 flex flex-row justify-between bg-transparent navbar">
@@ -44,7 +44,7 @@ const Navbar = () => {
             href="/"
             className="flex items-center justify-center w-10 h-10 ml-2 font-black text-center text-transparent border-gray-500 rounded-md cursor-pointer"
           >
-            <Image src="/logo-bold.webp" alt="logo" width={500} height={500} />
+            <Image src="/logo-bold.webp" alt="logo" width={100} height={100} priority />
           </Link>
         </h1>
         <nav className="flex items-center justify-center flex-1 text-center" aria-label="Global">
