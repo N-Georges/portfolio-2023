@@ -53,7 +53,7 @@ const Hero = () => {
                 <span className="font-black text-transparent cursor-pointer animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text">
                   Développeur
                 </span>{" "}
-                Web <span>🧑‍💻</span>
+                Web
               </h1>
             </motion.div>
             <motion.div
