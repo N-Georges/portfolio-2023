@@ -11,17 +11,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <meta
           name="image"
           property="og:image"
-          content="https://portfolio-2023-red.vercel.app/_next/image?url=%2Fog.webp&w=1080&q=75"
+          content="https://ngeorges.vercel.app/_next/image?url=%2Fog.webp&w=1080&q=75"
         />
         <meta
           name="description"
           property="og:description"
           content="Portfolio de Nodari Georges, développeur web"
         />
-        <meta name="url" property="og:url" content="https://portfolio-2023-red.vercel.app/" />
+        <meta name="url" property="og:url" content="https://ngeorges.vercel.app" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="portfolio-2023-red.vercel.app" />
-        <meta property="twitter:url" content="https://portfolio-2023-red.vercel.app/" />
+        <meta name="twitter:site" content="@_ndi_georges" />
+        <meta name="twitter:creator" content="@_ndi_georges" />
+        <meta name="twitter:title" content="Nodari Georges - Portfolio"></meta>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="ngeorges.vercel.app" />
+        <meta property="twitter:url" content="https://ngeorges.vercel.app" />
         <meta name="twitter:title" content="NG - Portfolio" />
         <meta name="twitter:description" content="Portfolio de Nodari Georges, développeur web" />
         <meta name="twitter:image" content="/og.webp" />
