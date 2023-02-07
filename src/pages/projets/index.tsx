@@ -71,7 +71,7 @@ export default function Projets({ projects }: { projects: Project[] }) {
         <title>NG - Projets</title>
         <meta name="description" content="Hello, je vous présente mes différents projets" />
       </Head>
-      <section className="pt-20 pb-32 lg:pt-[200px] md:pb-12 lg:pb-[90px]">
+      <section className="pt-20 pb-32 lg:pt-[150px] md:pb-12 lg:pb-[80px]">
         <div className="container mx-auto">
           <div className="flex flex-wrap">
             <div className="w-full px-4">
