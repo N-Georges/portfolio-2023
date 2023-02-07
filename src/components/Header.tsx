@@ -38,7 +38,7 @@ const Header = () => {
   const toggle = () => setOpen(!isOpen);
 
   return (
-    <div className="fixed inset-x-0 top-0 z-50 flex flex-row justify-between bg-transparent navbar">
+    <div className="fixed inset-x-0 top-0 z-50 flex flex-row justify-between bg-white/90 md:bg-transparent navbar">
       <div className="gap-5 navbar-center">
         <h1 className="text-3xl cursor-pointer md:flex">
           <Link

@@ -34,7 +34,7 @@ const BottomNav = () => {
   const currentRoute = router.pathname;
 
   return (
-    <div className="btm-nav md:hidden pt-100">
+    <div className="btm-nav md:hidden">
       {dataTabs.map((item, index) => (
         <Link
           href={item.href}
