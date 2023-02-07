@@ -2,24 +2,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { TbFileDescription, TbWorldUpload, TbBrandGithub } from "react-icons/tb";
 
-import {
-  SiTailwindcss,
-  SiChakraui,
-  SiNextdotjs,
-  // SiPostgresql,
-  // SiHasura,
-  // SiGraphql,
-  // SiTypescript,
-  // SiPrisma,
-  // SiReact,
-  // SiDocker,
-  // SiStyledcomponents,
-  // SiSupabase,
-  SiSquarespace,
-} from "react-icons/si";
 import Head from "next/head";
+import client from "@/lib/graphql/client";
+import { GET_PROJECTS } from "@/lib/graphql/queries";
 
 const tabs = [
   {
@@ -36,63 +22,23 @@ const tabs = [
   },
 ];
 
-const data_projects = [
-  {
-    id: 1,
-    title: "Mutatis",
-    description:
-      "Mutatis est un cabinet juridique spécialisé dans le droit de la propriété intellectuelle, les nouvelles technologies etc...",
-    image: "/mutatis.webp",
-    link: "https://www.mutatis.legal/",
-    github: "",
-    category: "customer",
-    technologies: [{ id: 1, icon: SiSquarespace, name: "Squarespace", color: "text-[#000000]" }],
-  },
-  {
-    id: 2,
-    title: "Oak law firm",
-    description:
-      "Oak law firm est un cabinet d'avocats belge spécialisé dans un grand nombre de domaines juridiques.",
-    image: "/oak.webp",
-    link: "https://www.oaklaw.eu/",
-    github: "",
-    category: "customer",
-    technologies: [{ id: 1, icon: SiSquarespace, name: "Squarespace", color: "text-[#000000]" }],
-  },
-  {
-    id: 3,
-    title: "01",
-    description:
-      "Mon portfolio est un site web qui vous permet de découvrir mes projets et mes compétences.",
-    image: "/portfolio-1.avif",
-    link: "https://www.mutatis.legal/",
-    github: "https://github.com/N-Georges",
-    category: "personal",
-    technologies: [
-      { id: 1, icon: SiNextdotjs, name: "Next.js", color: "text-[#000000]" },
-      { id: 2, icon: SiChakraui, name: "Chakra UI", color: "text-[#3ABBB6]" },
-    ],
-  },
-  {
-    id: 4,
-    title: "02",
-    description:
-      "Mon portfolio est un site web qui vous permet de découvrir mes projets et mes compétences.",
-    image: "/portfolio-2.avif",
-    link: "https://www.mutatis.legal/",
-    github: "https://github.com/N-Georges",
-    category: "personal",
-    technologies: [
-      { id: 1, icon: SiNextdotjs, name: "Next.js", color: "text-[#000000]" },
-      { id: 2, icon: SiTailwindcss, name: "Tailwind CSS", color: "text-[#35B3EB]" },
-    ],
-  },
-];
+type Project = {
+  id: string;
+  title: string;
+  description: string;
+  technologies: string[];
+  image: { url: string };
+  slug: string;
+  sourceUrl: string;
+  githubUrl: string;
+  category: string;
+};
 
-export default function Projets() {
+export default function Projets({ projects }: { projects: Project[] }) {
+  console.log(projects);
   const [isActiveTab, setIsActiveTab] = useState(0);
   const [activeIndex, setActiveIndex] = useState(-1);
-  const [data, setData] = useState(data_projects);
+  const [data, setData] = useState(projects);
 
   const handleCollapse = (index: number) => {
     setActiveIndex(index === activeIndex ? -1 : index);
@@ -100,9 +46,9 @@ export default function Projets() {
 
   const handleFilter = (category: string) => {
     if (category === "all") {
-      setData(data_projects);
+      setData(projects);
     } else {
-      const filteredData = data_projects.filter((item) => item.category === category);
+      const filteredData = projects.filter((item) => item.category === category);
       setData(filteredData);
     }
   };
@@ -193,7 +139,7 @@ export default function Projets() {
                   <div className="collapse-content">
                     <div className="border mockup-window bg-base-300">
                       <Image
-                        src={item.image}
+                        src={item.image.url}
                         alt="mutatis legal website"
                         className="w-full h-auto"
                         width={500}
@@ -203,16 +149,14 @@ export default function Projets() {
                     <div className="mx-3 mt-2 space-y-3">
                       <p className="mb-2 text-xl font-medium">Description</p>
                       <div className="flex items-center space-x-3">
-                        <TbFileDescription className="text-2xl text-[#000000]" />
                         <p className="text-base text-body-color">{item.description}</p>
                       </div>
                       <div>
                         <p className="mb-2 text-xl font-medium">Technologies</p>
                         <div className="space-y-3">
                           {item.technologies.map((item) => (
-                            <div key={item.id} className="flex items-center space-x-2">
-                              <item.icon className={`text-2xl ${item.color}`} />
-                              <p className="text-base text-body-color">{item.name}</p>
+                            <div key={item} className="flex items-center space-x-2">
+                              <p className="text-base text-body-color">#{item}</p>
                             </div>
                           ))}
                         </div>
@@ -221,16 +165,18 @@ export default function Projets() {
                         <p className="mb-2 text-xl font-medium">Liens utiles</p>
                         <div className="space-y-3">
                           <div className="flex items-center space-x-3">
-                            <TbWorldUpload className="text-2xl text-[#000000]" />
-                            <Link href={item.link} target="_blank" className="link link-hover">
-                              {item.link}
+                            <Link href={item.sourceUrl} target="_blank" className="link link-hover">
+                              {item.sourceUrl}
                             </Link>
                           </div>
-                          {item.github && (
+                          {item.githubUrl && (
                             <div className="flex items-center space-x-3">
-                              <TbBrandGithub className="text-2xl text-[#000000]" />
-                              <Link href={item.github} target="_blank" className="link link-hover">
-                                {item.github}
+                              <Link
+                                href={item.githubUrl}
+                                target="_blank"
+                                className="link link-hover"
+                              >
+                                {item.githubUrl}
                               </Link>
                             </div>
                           )}
@@ -246,4 +192,13 @@ export default function Projets() {
       </section>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const { projects } = await client.request(GET_PROJECTS);
+  return {
+    props: {
+      projects,
+    },
+  };
 }
