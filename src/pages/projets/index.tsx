@@ -2,10 +2,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 import Head from "next/head";
 import client from "@/lib/graphql/client";
 import { GET_PROJECTS } from "@/lib/graphql/queries";
+import { useRouter } from "next/router";
 
 const tabs = [
   {
@@ -37,11 +38,11 @@ type Project = {
 export default function Projets({ projects }: { projects: Project[] }) {
   console.log(projects);
   const [isActiveTab, setIsActiveTab] = useState(0);
-  const [activeIndex, setActiveIndex] = useState(-1);
   const [data, setData] = useState(projects);
+  const router = useRouter();
 
-  const handleCollapse = (index: number) => {
-    setActiveIndex(index === activeIndex ? -1 : index);
+  const handleLink = (slug: string) => {
+    router.push(`/projets/${slug}`);
   };
 
   const handleFilter = (category: string) => {
@@ -121,71 +122,69 @@ export default function Projets({ projects }: { projects: Project[] }) {
                   ))}
                 </div>
               </motion.div>
-              {data.map((item, index) => (
-                <motion.div
-                  onClick={() => handleCollapse(index)}
-                  tabIndex={0}
-                  className={`collapse collapse-arrow cursor-pointer border border-base-300 bg-base-100 rounded-box ${
-                    activeIndex === index ? "collapse-open" : "collapse-close"
-                  }`}
-                  key={item.id}
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <div className="text-xl font-medium collapse-title">
-                    <span>Projet</span> <span className="font-bold text-primary">{item.title}</span>
-                  </div>
-                  <div className="collapse-content">
-                    <div className="border mockup-window bg-base-300">
-                      <Image
-                        src={item.image.url}
-                        alt="mutatis legal website"
-                        className="w-full h-auto"
-                        width={500}
-                        height={500}
-                      />
-                    </div>
-                    <div className="mx-3 mt-2 space-y-3">
-                      <p className="mb-2 text-xl font-medium">Description</p>
-                      <div className="flex items-center space-x-3">
-                        <p className="text-base text-body-color">{item.description}</p>
-                      </div>
-                      <div>
-                        <p className="mb-2 text-xl font-medium">Technologies</p>
-                        <div className="space-y-3">
+              <div className="grid grid-cols-1 gap-5 pt-2 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-6">
+                {data.length > 0 ? (
+                  data.map((item) => (
+                    <motion.button
+                      onClick={() => handleLink(item.slug)}
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6 }}
+                      key={item.id}
+                      className="col-span-1 text-left group md:col-span-2 xl:col-span-2 card glass"
+                    >
+                      <figure>
+                        <Image
+                          src={item.image.url}
+                          alt={item.title}
+                          className="w-full h-auto transition-all duration-500 ease-in-out group-hover:scale-105 "
+                          width={500}
+                          height={500}
+                          priority
+                        />
+                      </figure>
+                      <div className="px-6 py-4 card-body">
+                        <h2 className="card-title">{item.title}</h2>
+                        <p>{item.description}</p>
+
+                        <div className="pb-2 space-x-4">
+                          {item.sourceUrl && (
+                            <Link href={item.sourceUrl} target="_blank">
+                              <FiExternalLink className="inline-block w-5 h-5 text-base-content" />
+                            </Link>
+                          )}
+                          {item.githubUrl && (
+                            <Link href={item.githubUrl} target="_blank">
+                              <FiGithub className="inline-block w-5 h-5 text-base-content" />
+                            </Link>
+                          )}
+                        </div>
+                        <div>
                           {item.technologies.map((item) => (
-                            <div key={item} className="flex items-center space-x-2">
-                              <p className="text-base text-body-color">#{item}</p>
-                            </div>
+                            <span
+                              key={item}
+                              className="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full"
+                            >
+                              #{item}
+                            </span>
                           ))}
                         </div>
                       </div>
-                      <div>
-                        <p className="mb-2 text-xl font-medium">Liens utiles</p>
-                        <div className="space-y-3">
-                          <div className="flex items-center space-x-3">
-                            <Link href={item.sourceUrl} target="_blank" className="link link-hover">
-                              {item.sourceUrl}
-                            </Link>
-                          </div>
-                          {item.githubUrl && (
-                            <div className="flex items-center space-x-3">
-                              <Link
-                                href={item.githubUrl}
-                                target="_blank"
-                                className="link link-hover"
-                              >
-                                {item.githubUrl}
-                              </Link>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+                    </motion.button>
+                  ))
+                ) : (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.7 }}
+                    className="items-center min-w-max"
+                  >
+                    <span className="text-2xl font-semibold text-base-content md:text-4xl">
+                      ⏰ Coming<span className="ml-2 text-primary">Soon</span> ⏰
+                    </span>
+                  </motion.div>
+                )}
+              </div>
             </div>
           </div>
         </div>
