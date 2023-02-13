@@ -36,7 +36,6 @@ type Project = {
 };
 
 export default function Projets({ projects }: { projects: Project[] }) {
-  console.log(projects);
   const [isActiveTab, setIsActiveTab] = useState(0);
   const [data, setData] = useState(projects);
   const router = useRouter();
